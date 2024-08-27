@@ -1,0 +1,214 @@
+@InBook{springer1,
+  author    = {Sminchisescu, Cristian and Bo, Liefeng and Ionescu, Catalin and Kanaujia, Atul},
+  editor    = {Moeslund, Thomas B. and Hilton, Adrian and Kr{\"u}ger, Volker and Sigal, Leonid},
+  pages     = {225--251},
+  publisher = {Springer London},
+  title     = {Feature-Based Pose Estimation},
+  year      = {2011},
+  address   = {London},
+  isbn      = {978-0-85729-997-0},
+  abstract  = {In this chapter we review challenges and methodology for feature-based predictive three-dimensional human pose reconstruction, based on image and video data. We argue that reliable 3D human pose prediction can be achieved through an alliance between image descriptors that encode multiple levels of selectivity and invariance and models that are capable to represent multiple structured solutions. For monocular systems, key to reliability is the capacity to leverage prior knowledge in order to bias solutions not only to kinematically feasible sets, but also toward typical configurations that humans are likely to assume in everyday surroundings. In this context, we discuss several predictive methods including large-scale mixture of experts, supervised spectral latent variable models and structural support vector machines, asses the impact of the various choices of image descriptors, review open problems, and give pointers to datasets and code available online.},
+  booktitle = {Visual Analysis of Humans: Looking at People},
+  doi       = {10.1007/978-0-85729-997-0_12},
+  url       = {https://doi.org/10.1007/978-0-85729-997-0_12},
+}
+
+@Article{arxiv3,
+  author        = {Yoli Shavit and Ron Ferens},
+  title         = {Introduction to Camera Pose Estimation with Deep Learning},
+  year          = {2019},
+  archiveprefix = {arXiv},
+  eprint        = {1907.05272},
+  primaryclass  = {cs.CV},
+  url           = {https://arxiv.org/abs/1907.05272},
+}
+
+@Misc{repo,
+  author       = {Alexandra Raibolt},
+  howpublished = {github.com},
+  title        = {Feature Detection and Matching},
+  year         = {2022},
+  abstract     = {Feature Detection and Matching between two images using Local Feature Descriptors and Local Binary Descriptors through the Brute Force and FLANN algorithms.
+
+From this application it is possible to solve several problems in the area of Computer Vision, such as: image recovery, motion tracking, motion structure detection, object detection, recognition and tracking, 3D object reconstruction, and others.},
+  url          = {https://github.com/whoisraibolt/Feature-Detection-and-Matching},
+}
+
+@Misc{opencv_docs,
+  author       = {OpenCV team},
+  howpublished = {https://docs.opencv.org/},
+  title        = {OpenCV Documentation},
+  year         = {2024},
+  url          = {https://docs.opencv.org/},
+}
+
+@Misc{baeldung,
+  author       = {Baeldung},
+  howpublished = {https://www.baeldung.com/},
+  title        = {Difference Between Fundamental Matrix and Essential Matrix},
+  year         = {2024},
+  url          = {https://www.baeldung.com/cs/fundamental-matrix-vs-essential-matrix},
+}
+
+@Misc{opencv_epipolar,
+  author       = {OpenCV team},
+  howpublished = {https://docs.opencv.org/},
+  title        = {OpenCV: Epipolar Geometry},
+  year         = {2024},
+  url          = {https://docs.opencv.org/master/da/de9/tutorial_py_epipolar_geometry.html},
+}
+
+@Misc{opencv_findEssentialMat,
+  author = {unknown},
+  title  = {Cv2.FindEssentialMat Method (InputArray, InputArray, InputArray ...},
+  year   = {2024},
+  url    = {https://shimat.github.io/opencvsharp_docs/html/12c25bd5-c6f9-9d8b-1ee3-68b61fc78fb9.htm},
+}
+
+@Misc{opencv_recoverPose,
+  author       = {unknown},
+  howpublished = {https://docs.rs/},
+  title        = {recover\_pose in opencv::calib3d - Rust - Docs.rs},
+  year         = {2024},
+  url          = {https://docs.rs/opencv/latest/opencv/calib3d/fn.recover_pose.html},
+}
+
+@Article{springer3,
+  author   = {Chen, Yifan and Li, Zhenjian and Li, Qingdang and Zhang, Mingyue},
+  journal  = {Complex \& Intelligent Systems},
+  title    = {Pose estimation algorithm based on point pair features using PointNet + +},
+  year     = {2024},
+  issn     = {2198-6053},
+  abstract = {This study proposes an innovative deep learning algorithm for pose estimation based on point clouds, aimed at addressing the challenges of pose estimation for objects affected by the environment. Previous research on using deep learning for pose estimation has primarily been conducted using RGB-D data. This paper introduces an algorithm that utilizes point cloud data for deep learning-based pose computation. The algorithm builds upon previous work by integrating PointNet +  + technology and the classical Point Pair Features algorithm, achieving accurate pose estimation for objects across different scene scales. Additionally, an adaptive parameter-density clustering method suitable for point clouds is introduced, effectively segmenting clusters in varying point cloud density environments. This resolves the complex issue of parameter determination for density clustering in different point cloud environments and enhances the robustness of clustering. Furthermore, the LineMod dataset is transformed into a point cloud dataset, and experiments are conducted on the transformed dataset to achieve promising results with our algorithm. Finally, experiments under both strong and weak lighting conditions demonstrate the algorithm's robustness.},
+  doi      = {10.1007/s40747-024-01508-x},
+  refid    = {Chen2024},
+  url      = {https://doi.org/10.1007/s40747-024-01508-x},
+}
+
+@Article{toth,
+  author   = {Jonas Toth},
+  title    = {Post-Processing of Depth Images and Laser Scan Data for Feature-based Pose Estimation},
+  year     = {2020},
+  month    = jun,
+  pages    = {0-97},
+  abstract = {Features — special identiﬁable bits of data — and their recognition between dif-
+ferent images play an important role in computer vision to solve tasks like visual
+odometry, place and object recognition or global localization. Methods for these
+areas are established and implemented for common mobile devices and robots.
+Even though depth data processing is omnipresent for robotic systems, feature
+detectors for salient, recognizable segments of such pointclouds are not an estab-
+lished method for reliable and robust localization without prior knowledge.
+This work proposes depth image processing steps to utilize feature detectors
+and descriptors for color images on depth data. In order to apply the algorithms
+SIFT, SURF, ORB and AKAZE on depth images, they are converted into derived
+feature images that encode the local geometry of the measured environment.
+Multiple possible transformations of the depth data, from the already proposed
+Bearing-Angle image to measures of curvature and ﬁnally the novel Flexion image
+are developed, analyzed and evaluated with respect to, among other things, key-
+point stability and discrimination potential of the descriptors. The aspects keypoint
+count, size, response, the matching distance between true and false positives and
+additional measures like precision, recall and informedness are determined for
+four experimental datasets. They consist of a synthetic scene, an underground
+mining environment, an ofﬁce scene and LiDAR scans. In addition, the impact of
+ﬁltering the depth data with edge-preserving ﬁlters is analyzed on the outcome.
+All experiments indicate a consistently better performance of the Flexion image
+compared to the Bearing-Angle image and proof that SIFT and AKAZE are suitable
+as feature detectors and descriptors whereas SURF and ORB are not. This insight
+is underlined with the computation of a visual odometry benchmark. The research
+forms a solid foundation to further develop the use of classical computer vision
+algorithms on Flexion images to accomplish feature-related tasks with depth data.},
+  file     = {:/home/fleis/Nextcloud/Dokumente/Seminararbeit_SS24/sources_docs/master-thesis-jonas-toth-compressed.pdf:PDF},
+  url      = {https://github.com/JonasToth/depth-conversions/blob/master/docs/master-thesis-jonas-toth-compressed.pdf},
+}
+
+@Article{fleischer,
+  author = {Jonas Fleischer, Nico Heinrich, Erik Lorenz, Martin Oehme},
+  title  = {Schriftliche Ausarbeitung zum Seminar virtuelle Realität},
+  year   = {2023},
+  month  = mar,
+  pages  = {1-58},
+}
+
+@Article{kitti_dataset,
+  author  = {Andreas Geiger and Philip Lenz and Christoph Stiller and Raquel Urtasun},
+  journal = {International Journal of Robotics Research (IJRR)},
+  title   = {Vision meets Robotics: The KITTI Dataset},
+  year    = {2013},
+}
+
+@Misc{opencv_akaze,
+  author       = {unknown},
+  howpublished = {https://docs.opencv.org/},
+  title        = {AKAZE local features matching},
+  url          = {https://docs.opencv.org/3.4/db/d70/tutorial_akaze_matching.html},
+}
+
+@Misc{orb,
+  author       = {Gil Levi},
+  howpublished = {https://gilscvblog.com/},
+  title        = {A tutorial on binary descriptors – part 3 – The ORB descriptor},
+  year         = {2013},
+  url          = {https://gilscvblog.com/2013/10/04/a-tutorial-on-binary-descriptors-part-3-the-orb-descriptor/},
+}
+
+@Misc{sift,
+  author       = {Prof. Dr. Edmund Weitz},
+  howpublished = {http://weitz.de/},
+  title        = {SIFT - Scale-Invariant Feature Transform},
+  year         = {2016},
+  url          = {http://weitz.de/sift/index.html},
+}
+
+@Misc{opencv_features,
+  author       = {unkown},
+  howpublished = {https://docs.opencv.org/},
+  title        = {Understanding Features},
+  year         = {2024},
+  url          = {https://docs.opencv.org/3.4/df/d54/tutorial_py_features_meaning.html},
+}
+
+@Article{springer2,
+  author   = {Dubey, Shradha and Dixit, Manish},
+  journal  = {Multimedia Systems},
+  title    = {A comprehensive survey on human pose estimation approaches},
+  year     = {2023},
+  issn     = {1432-1882},
+  number   = {1},
+  pages    = {167--195},
+  volume   = {29},
+  abstract = {The human pose estimation is a significant issue that has been taken into consideration in the computer vision network for recent decades. It is a vital advance toward understanding individuals in videos and still images. In simple terms, a human pose estimation model takes in an image or video and estimates the position of a person’s skeletal joints in either 2D or 3D space. Several studies on human posture estimation can be found in the literature, however, they center around a specific class; for instance, model-based methodologies or human movement investigation, and so on. Later, various Deep Learning (DL) algorithms came into existence to overcome the difficulties which were there in the earlier approaches. In this study, an exhaustive review of human pose estimation (HPE), including milestone work and recent advancements is carried out. This survey discusses the different two-dimensional (2D) and three-dimensional human (3D) pose estimation techniques along with their classical and deep learning approaches which provide the solution to the various computer vision problems. Moreover, the paper also considers the different deep learning models used in pose estimation, and the analysis of 2D and 3D datasets is done. Some of the evaluation metrics used for estimating human poses are also discussed here. By knowing the direction of the individuals, HPE opens a road for a few real-life applications some of which are talked about in this study.},
+  doi      = {10.1007/s00530-022-00980-0},
+  refid    = {Dubey2023},
+  url      = {https://doi.org/10.1007/s00530-022-00980-0},
+}
+
+@Misc{arxiv1,
+  author        = {Haoming Chen and Runyang Feng and Sifan Wu and Hao Xu and Fengcheng Zhou and Zhenguang Liu},
+  title         = {2D Human Pose Estimation: A Survey},
+  year          = {2022},
+  archiveprefix = {arXiv},
+  eprint        = {2204.07370},
+  primaryclass  = {cs.CV},
+  url           = {https://arxiv.org/abs/2204.07370},
+}
+
+@Misc{arxiv2,
+  author        = {Jian Liu and Wei Sun and Hui Yang and Zhiwen Zeng and Chongpei Liu and Jin Zheng and Xingyu Liu and Hossein Rahmani and Nicu Sebe and Ajmal Mian},
+  title         = {Deep Learning-Based Object Pose Estimation: A Comprehensive Survey},
+  year          = {2024},
+  archiveprefix = {arXiv},
+  eprint        = {2405.07801},
+  primaryclass  = {cs.CV},
+  url           = {https://arxiv.org/abs/2405.07801},
+}
+
+@Misc{repo1,
+  author       = {Jonas Fleischer},
+  howpublished = {https://www.github.com},
+  title        = {seminar\_sose\_2024},
+  year         = {2024},
+  comment      = {Paper zu "Comparison of Feature based pose estimation and localization methods in dark environments"},
+  url          = {https://github.com/halbersacknuesse/seminar_sose_2024.git},
+}
+
+@Comment{jabref-meta: databaseType:bibtex;}

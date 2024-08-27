@@ -1,0 +1,835 @@
+
+%% bare_conf.tex
+%% V1.4b
+%% 2015/08/26
+%% by Michael Shell
+%% See:
+%% http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.8b or later) with an IEEE
+%% conference paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/pkg/ieeetran
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% User assumes all risk.
+%% In no event shall the IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%*************************************************************************
+
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. The IEEE's font choices and paper sizes can   ***
+% *** trigger bugs that do not appear when using other class files.       ***                          ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+
+\documentclass[conference, a4paper]{IEEEtran}
+% Some Computer Society conferences also require the compsoc mode option,
+% but others use the standard conference format.
+%
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \documentclass[conference]{../sty/IEEEtran}
+
+
+
+
+
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+
+
+% *** MISC UTILITY PACKAGES ***
+%
+%\usepackage{ifpdf}
+% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
+% compilation based on whether the output is pdf or dvi.
+% usage:
+% \ifpdf
+%   % pdf code
+% \else
+%   % dvi code
+% \fi
+% The latest version of ifpdf.sty can be obtained from:
+% http://www.ctan.org/pkg/ifpdf
+% Also, note that IEEEtran.cls V1.7 and later provides a builtin
+% \ifCLASSINFOpdf conditional that works the same way.
+% When switching from latex to pdflatex and vice-versa, the compiler may
+% have to be run twice to clear warning/error messages.
+
+
+
+
+
+
+% *** CITATION PACKAGES ***
+%
+\usepackage{cite}
+% cite.sty was written by Donald Arseneau
+% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
+% \cite{} output to follow that of the IEEE. Loading the cite package will
+% result in citation numbers being automatically sorted and properly
+% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off
+% such as if a citation ever needs to be enclosed in parenthesis.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 5.0 (2009-03-20) and later if using hyperref.sty.
+% The latest version can be obtained at:
+% http://www.ctan.org/pkg/cite
+% The documentation is contained in the cite.sty file itself.
+
+
+
+
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+  \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation
+% can be obtained at: 
+% http://www.ctan.org/pkg/graphicx
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found at:
+% http://www.ctan.org/pkg/epslatex
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). The IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+
+% *** MATH PACKAGES ***
+%
+%\usepackage{amsmath}
+% A popular package from the American Mathematical Society that provides
+% many useful and powerful commands for dealing with mathematics.
+%
+% Note that the amsmath package sets \interdisplaylinepenalty to 10000
+% thus preventing page breaks from occurring within multiline equations. Use:
+%\interdisplaylinepenalty=2500
+% after loading amsmath to restore such page breaks as IEEEtran.cls normally
+% does. amsmath.sty is already installed on most LaTeX systems. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/pkg/amsmath
+
+
+
+
+
+% *** SPECIALIZED LIST PACKAGES ***
+%
+%\usepackage{algorithmic}
+% algorithmic.sty was written by Peter Williams and Rogerio Brito.
+% This package provides an algorithmic environment fo describing algorithms.
+% You can use the algorithmic environment in-text or within a figure
+% environment to provide for a floating algorithm. Do NOT use the algorithm
+% floating environment provided by algorithm.sty (by the same authors) or
+% algorithm2e.sty (by Christophe Fiorio) as the IEEE does not use dedicated
+% algorithm float types and packages that provide these will not provide
+% correct IEEE style captions. The latest version and documentation of
+% algorithmic.sty can be obtained at:
+% http://www.ctan.org/pkg/algorithms
+% Also of interest may be the (relatively newer and more customizable)
+% algorithmicx.sty package by Szasz Janos:
+% http://www.ctan.org/pkg/algorithmicx
+
+
+
+
+% *** ALIGNMENT PACKAGES ***
+%
+%\usepackage{array}
+% Frank Mittelbach's and David Carlisle's array.sty patches and improves
+% the standard LaTeX2e array and tabular environments to provide better
+% appearance and additional user controls. As the default LaTeX2e table
+% generation code is lacking to the point of almost being broken with
+% respect to the quality of the end results, all users are strongly
+% advised to use an enhanced (at the very least that provided by array.sty)
+% set of table tools. array.sty is already installed on most systems. The
+% latest version and documentation can be obtained at:
+% http://www.ctan.org/pkg/array
+
+
+% IEEEtran contains the IEEEeqnarray family of commands that can be used to
+% generate multiline equations as well as matrices, tables, etc., of high
+% quality.
+
+
+
+
+% *** SUBFIGURE PACKAGES ***
+%\ifCLASSOPTIONcompsoc
+%  \usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+%\else
+%  \usepackage[caption=false,font=footnotesize]{subfig}
+%\fi
+% subfig.sty, written by Steven Douglas Cochran, is the modern replacement
+% for subfigure.sty, the latter of which is no longer maintained and is
+% incompatible with some LaTeX packages including fixltx2e. However,
+% subfig.sty requires and automatically loads Axel Sommerfeldt's caption.sty
+% which will override IEEEtran.cls' handling of captions and this will result
+% in non-IEEE style figure/table captions. To prevent this problem, be sure
+% and invoke subfig.sty's "caption=false" package option (available since
+% subfig.sty version 1.3, 2005/06/28) as this is will preserve IEEEtran.cls
+% handling of captions.
+% Note that the Computer Society format requires a larger sans serif font
+% than the serif footnote size font used in traditional IEEE formatting
+% and thus the need to invoke different subfig.sty package options depending
+% on whether compsoc mode has been enabled.
+%
+% The latest version and documentation of subfig.sty can be obtained at:
+% http://www.ctan.org/pkg/subfig
+
+
+
+
+% *** FLOAT PACKAGES ***
+%
+%\usepackage{fixltx2e}
+% fixltx2e, the successor to the earlier fix2col.sty, was written by
+% Frank Mittelbach and David Carlisle. This package corrects a few problems
+% in the LaTeX2e kernel, the most notable of which is that in current
+% LaTeX2e releases, the ordering of single and double column floats is not
+% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
+% single column figure to be placed prior to an earlier double column
+% figure.
+% Be aware that LaTeX2e kernels dated 2015 and later have fixltx2e.sty's
+% corrections already built into the system in which case a warning will
+% be issued if an attempt is made to load fixltx2e.sty as it is no longer
+% needed.
+% The latest version and documentation can be found at:
+% http://www.ctan.org/pkg/fixltx2e
+
+
+%\usepackage{stfloats}
+% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
+% the ability to do double column floats at the bottom of the page as well
+% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
+% LaTeX2e). It also provides a command:
+%\fnbelowfloat
+% to enable the placement of footnotes below bottom floats (the standard
+% LaTeX2e kernel puts them above bottom floats). This is an invasive package
+% which rewrites many portions of the LaTeX2e float routines. It may not work
+% with other packages that modify the LaTeX2e float routines. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/pkg/stfloats
+% Do not use the stfloats baselinefloat ability as the IEEE does not allow
+% \baselineskip to stretch. Authors submitting work to the IEEE should note
+% that the IEEE rarely uses double column equations and that authors should try
+% to avoid such use. Do not be tempted to use the cuted.sty or midfloat.sty
+% packages (also by Sigitas Tolusis) as the IEEE does not format its papers in
+% such ways.
+% Do not attempt to use stfloats with fixltx2e as they are incompatible.
+% Instead, use Morten Hogholm'a dblfloatfix which combines the features
+% of both fixltx2e and stfloats:
+%
+% \usepackage{dblfloatfix}
+% The latest version can be found at:
+% http://www.ctan.org/pkg/dblfloatfix
+
+
+
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+%
+\usepackage{url}
+% url.sty was written by Donald Arseneau. It provides better support for
+% handling and breaking URLs. url.sty is already installed on most LaTeX
+% systems. The latest version and documentation can be obtained at:
+% http://www.ctan.org/pkg/url
+% Basically, \url{my_url_here}.
+
+
+
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+% (Unless specifically asked to do so by the journal or conference you plan
+% to submit to, of course. )
+
+
+% add custom packages
+%% https://tu-freiberg.de/corporate-design/identelemente/profilfarben-forschung
+\usepackage{color}
+\definecolor{tubafblue}{rgb}{0, 0.39215686274509803, 0.6588235294117647}
+\definecolor{tubafgray}{rgb}{0.6039215686274509, 0.6078431372549019, 0.615686274509804}
+
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+
+
+
+\begin{document}
+
+
+\input{coverpage}
+
+\title{Comparison of feature-based pose estimation and localization methods in dark environments}
+
+\author{\IEEEauthorblockN{Jonas Fleischer}
+\IEEEauthorblockA{Technische Universität Bergakademie Freiberg\\Fakultät für Mathematik und Informatik\\Institut für Informatik\\Bernhard-von-Cotta-Straße 2\\09599 Freiberg}}
+
+\maketitle
+
+\begin{abstract}
+This paper presents a comparative analysis of feature-based pose estimation and localization methods, focusing on traditional algorithms such as Scale-Invariant Feature Transform (SIFT), Oriented FAST and Rotated BRIEF (ORB), and Accelerated-KAZE (AKAZE). These methods are crucial for autonomous navigation in environments where Global Navigation Satellite Systems (GNSS) are unreliable or unavailable, such as indoor settings. Additionally, the focus is on dark environments where no visual data is available. Therefore, depth images captured from sensors like LIDAR are intended to be used. To ensure reliability during testing, synthetic test data generated from sensors designed for low-light environments were utilized. However, due to implementation errors, the expected results were not fully realized. While the algorithms themselves are known for their robustness and accuracy, the limitations observed in this study stem from the current state of the implementation rather than the inherent capabilities of the algorithms. This work highlights the importance of careful implementation and testing, and it outlines the next steps required to achieve accurate pose estimation in future work.
+\end{abstract}
+
+\IEEEpeerreviewmaketitle
+
+
+
+\section{Introduction}
+Autonomous localization and navigation of robots and autonomous vehicles constitute a central research topic in robotics and artificial intelligence. In many scenarios, such as underground mines, deep oceans, or space, Global Navigation Satellite Systems (GNSS), including GPS, are either unavailable or unreliable. Consequently, developing methods for autonomous localization and navigation that rely solely on visual data is of crucial importance \cite{springer1, springer2}.
+In this context, sensors that provide depth data, such as LiDAR, Radar, and Structured Light sensors, play a significant role. These sensors enable robots and autonomous vehicles to perceive their environment in 3D, thereby facilitating precise localization and navigation \cite{springer1, springer2}. However, dark environments pose a particular challenge, as they can significantly degrade the quality of visual data \cite{springer1, springer2}.
+Simultaneous Localization and Mapping (SLAM) is an active research area in mobile robotics, particularly for autonomous tasks based on a robot's perception in unknown environments \cite{arxiv1}. In recent decades, research and development in autonomous robotics have predominantly focused on ego localization and the estimation of 3D robot poses over time within an unknown environment \cite{arxiv1}. Initially, the Global Positioning System (GPS) provided an efficient solution for robot localization with satisfactory precision. However, GPS has limitations, particularly in indoor environments, which have led to its replacement by other sensors \cite{arxiv1}.
+These emerging technologies offer greater flexibility in localization and are more easily adapted to environmental perception via SLAM and visual SLAM (vSLAM) \cite{arxiv1}. SLAM systems perform two simultaneous tasks—localization and mapping—to achieve the necessary accuracy for robot localization and environmental perception \cite{arxiv1}.
+Several approaches have been developed for feature-based pose estimation. Classical algorithms, such as Scale-Invariant Feature Transform (SIFT), Oriented FAST and Rotated BRIEF (ORB), and Accelerated-KAZE (AKAZE), have been widely utilized due to their robustness and efficiency \cite{springer3}. These methods typically detect keypoints in images and describe them using feature descriptors, which are then matched between consecutive frames to estimate the relative pose \cite{springer3}.
+In contrast, machine learning approaches, particularly those based on deep learning, have gained popularity in recent years. These methods leverage large datasets to learn feature representations and estimate poses directly from images. While they have demonstrated impressive results, they often require significant computational resources and extensive training data, which may render them less suitable for real-time applications in dark environments \cite{arxiv2, arxiv3}.
+Despite the advancements in machine learning, classical feature-based algorithms remain relevant due to their computational efficiency and robustness in various conditions. However, there remains a gap in the research regarding the performance of these classical algorithms in dark environments using depth images and point clouds. This paper aims to address this gap by evaluating the effectiveness of SIFT, ORB, and AKAZE algorithms for pose estimation under these challenging conditions.
+In this study, we will compare various feature-based methods for pose estimation and localization in dark environments. Our objective is to evaluate the performance of these methods and identify those most suited for use in such conditions. The focus will be on methods for processing depth data applicable to visual odometry and SLAM.
+
+
+\section{Methods}
+
+\subsection{Explanation of Approaches and Their Mathematical Backgrounds}
+
+\paragraph{SIFT (Scale-Invariant Feature Transform)}
+The Scale-Invariant Feature Transform (SIFT) is an algorithm for detecting and describing local features in images. Developed by David Lowe in 1999, SIFT is known for its robustness to changes in scale, rotation, illumination, and noise \cite{sift}. The algorithm consists of four main steps:
+\begin{enumerate}
+	\item \textbf{Scale-space extrema detection:} The image is transformed into different scales to detect features of various sizes.
+	\item \textbf{Keypoint localization:} Local maxima and minima in the scale-space are identified as potential features.
+	\item \textbf{Orientation assignment:} An orientation is assigned to each keypoint to achieve rotation invariance.
+	\item \textbf{Keypoint descriptor:} A descriptor is created for each keypoint, capturing the local image information around the keypoint.
+\end{enumerate}
+
+\paragraph{AKAZE (Accelerated-KAZE)}
+AKAZE is an algorithm for detecting and describing features, based on the KAZE method but significantly faster \cite{opencv_akaze}. AKAZE uses nonlinear diffusion to create the scale-space representation and is known for its efficiency and accuracy. The algorithm consists of the following steps:
+\begin{enumerate}
+	\item \textbf{Nonlinear diffusion:} The image is filtered through nonlinear diffusion to detect features of various sizes.
+	\item \textbf{Feature detection:} Local maxima and minima in the diffused image are identified as potential features.
+	\item \textbf{Feature description:} A descriptor is created for each feature, capturing the local image information around the feature.
+	\item \textbf{Feature matching:} The descriptors are used to match features between different images.
+\end{enumerate}
+
+\paragraph{ORB (Oriented FAST and Rotated BRIEF)}
+ORB is a fast and robust algorithm for detecting and describing features, based on the FAST and BRIEF methods \cite{orb}. ORB combines the speed of FAST with the robustness of BRIEF and adds an orientation component to make the features rotation-invariant. The algorithm consists of the following steps:
+\begin{enumerate}
+	\item \textbf{Feature detection:} The FAST algorithm is used to detect features in the image.
+	\item \textbf{Feature description:} The BRIEF descriptor is used to describe the local image information around the features.
+	\item \textbf{Orientation correction:} The features are oriented to achieve rotation invariance.
+	\item \textbf{Feature matching:} The descriptors are used to match features between different images.
+\end{enumerate}
+
+\paragraph{Descriptors and Detectors}
+A \textbf{detector} finds interesting points in an image, while a \textbf{descriptor} converts these points into numerical "fingerprints" that can be used for matching \cite{opencv_features}.
+
+\subsection{Depth Images and Flexion Images}
+In this study, we utilize two types of datasets: depth images and flexion images.
+
+\paragraph{Depth Images}
+Depth images can be captured using various sensors, including LiDAR, RADAR, and structured light sensors. It is important to differentiate between traditional depth images, which are visual representations of the environment. These images can be continuous or consist of individual data points within the image file. Each pixel in a depth image represents the distance from the viewer to the surface of an object. In this study, we use continuous images that represent specific distances using grayscale values. Depending on the implementation of recording and processing, different configurations are possible. For instance, the mapping of distance from near to far can be represented from black to white or vice versa. Additionally, the specific sensor determines the distance range it can cover, and thus what black or white represents as the maximum distance value for a concrete maximum distance to the viewer. It is also possible to visualize depth data originating from a point cloud. The KITTI dataset is an example of this \cite{kitti_dataset}. In this case, the depth images are not continuous but consist of pixel grids where each pixel represents the distance value of a measurement point. The underlying sensor in the case of the KITTI dataset apparently provides only individual, discrete measurement points \ref{Pic1}.
+
+\paragraph{Flexion Images}
+Flexion images are a further processing of depth images. In this case, depth images are used as the data basis. The image is iterated pixel by pixel, and the surrounding pixels of each pixel are considered. Since these represent a distance value, the flexion (curvature) of the surface can be determined. The normals are formed from the two diagonals and from the horizontal and vertical. The flexion of the considered pixel is then calculated using the equation:
+
+\begin{equation}
+	\mathcal{F} = \left\| \vec{n}_1 \cdot \vec{n}_2 \right\|_2
+	\label{eq:flexion}
+\end{equation}
+
+where \(\vec{n}_1\) and \(\vec{n}_2\) are the normal vectors. Since the vectors \(\vec{n}_1\) and \(\vec{n}_2\) lie between 0 and 1, \(\mathcal{F} \in [0, 1]\) (see Equation \ref{eq:flexion}) \cite{toth}. This results in a representation that provides edges with high contrast. Surfaces that have the same distance to the viewer across the entire surface are colored uniformly. For surfaces that recede, a gradient is created. This representation leads to the hypothesis that these images provide more distinctive features for the feature detection algorithm, allowing it to better recognize the features.
+
+
+\subsection{Implementation of the Approaches}
+The implementation is based on a repository that provides a framework for feature detection and matching \cite{repo}. The following code snippets show the implementation of the SIFT, ORB, and AKAZE methods:
+
+\begingroup
+\fontsize{8}{10}\selectfont
+\begin{verbatim}
+	# Call function SIFT
+	def SIFT():
+	# Initiate SIFT detector
+	SIFT = cv.xfeatures2d.SIFT_create()
+	return SIFT
+	# Call function ORB
+	def ORB():
+	# Initiate ORB detector
+	ORB = cv.ORB_create()
+	return ORB
+	# Call function AKAZE
+	def AKAZE():
+	# Initiate AKAZE descriptor
+	AKAZE = cv.AKAZE_create()
+	return AKAZE
+\end{verbatim}
+\endgroup
+
+The created keypoints and matchings were then used in a custom implementation to reconstruct the pose using the OpenCV methods \texttt{findEssentialMat()} and \texttt{recoverPose()} \cite{opencv_docs}.
+
+\subsubsection{Essential Matrix and OpenCV Functions}
+
+The Essential Matrix is a fundamental concept in computer vision, particularly in the context of stereo vision and structure from motion. It encapsulates the intrinsic geometry between two views and is used to relate corresponding points in stereo images. The Essential Matrix \( \mathbf{E} \) is defined as:
+
+\[
+\mathbf{E} = \mathbf{t} \times \mathbf{R}
+\]
+
+where \( \mathbf{t} \) is the translation vector and \( \mathbf{R} \) is the rotation matrix between the two camera views \cite{baeldung}. The Essential Matrix maps points from one image to epipolar lines in the other image, enforcing the epipolar constraint \cite{opencv_epipolar}.
+
+\paragraph{findEssentialMat()}
+The `findEssentialMat()` function in OpenCV estimates the Essential Matrix between two sets of points in stereo images. The function signature is:
+
+\begingroup
+\fontsize{8}{10}\selectfont
+\begin{verbatim}
+	cv::Mat findEssentialMat(InputArray points1,
+	 InputArray points2,
+	 InputArray cameraMatrix, int method = RANSAC,
+	 double prob = 0.999, double threshold = 1.0,
+	 OutputArray mask = noArray());
+\end{verbatim}
+\endgroup
+
+\begin{itemize}
+	\item\textbf{points1, points2:} Arrays of corresponding points between the two images.
+	\item\textbf{cameraMatrix:} The intrinsic camera matrix.
+	\item\textbf{method:} The method for computing the Essential Matrix (e.g., RANSAC).
+	\item\textbf{prob:} The probability that the estimated matrix is correct.
+	\item\textbf{threshold:} The maximum distance from a point to an epipolar line in pixels.
+	\item\textbf{mask:} Output mask for inliers.
+\end{itemize}
+
+The function uses the RANSAC algorithm to robustly estimate the Essential Matrix by iteratively selecting random subsets of correspondences and computing the matrix that best fits the majority of points \cite{opencv_findEssentialMat}.
+
+\paragraph{recoverPose()}
+The `recoverPose()` function in OpenCV decomposes the Essential Matrix to recover the relative rotation and translation between two camera views. The function signature is:
+
+\begingroup
+\fontsize{8}{10}\selectfont
+\begin{verbatim}
+	int recoverPose(InputArray E,
+	 InputArray points1, InputArray points2,
+	 InputArray cameraMatrix,
+	 OutputArray R, OutputArray t,
+	 InputOutputArray mask = noArray());
+\end{verbatim}
+\endgroup
+
+\begin{itemize}
+	\item\textbf{E:} The input Essential Matrix.
+	\item\textbf{points1, points2:} Arrays of corresponding points between the two images.
+	\item\textbf{cameraMatrix:} The intrinsic camera matrix.
+	\item\textbf{R:} Output rotation matrix.
+	\item\textbf{t:} Output translation vector.
+	\item\textbf{mask:} Input/output mask for inliers.
+\end{itemize}
+
+The function works as follows:
+\begin{enumerate}
+	\item Input Validation: The function checks the validity of the input parameters, including the Essential Matrix and the corresponding points.
+	\item Decomposition: The Essential Matrix \( \mathbf{E} \) is decomposed into the rotation matrix \( \mathbf{R} \) and the translation vector \( \mathbf{t} \). This involves singular value decomposition (SVD) of \( \mathbf{E} \) to obtain the possible solutions for \( \mathbf{R} \) and \( \mathbf{t} \).
+	\item Chirality Check: The function performs a chirality check to ensure that the reconstructed points are in front of both cameras. This step helps in selecting the correct solution from the possible decompositions.
+	\item Output: The function returns the number of inliers that pass the chirality check and outputs the rotation matrix \( \mathbf{R} \) and the translation vector \( \mathbf{t} \) \cite{opencv_recoverPose}.
+\end{enumerate}
+
+The `recoverPose()` function is crucial for determining the relative pose between two camera views, which is essential for applications such as visual odometry and 3D reconstruction.
+
+\subsection{Custom Implementation and Discussion}
+After creating the matchings, the camera intrinsics, matches, and keypoints of the two images are loaded into the function. The camera intrinsics are necessary to describe the internal geometry and optical properties of the camera \cite{repo1}. The following functions are used to reconstruct the pose:
+
+\begingroup
+\fontsize{8}{10}\selectfont
+\begin{verbatim}
+	#Iterating over all keypoints found in the
+	 images
+	pts1 = np.float32([keypoints1[m.queryIdx].pt
+	 for m in matches])
+	pts2 = np.float32([keypoints2[m.trainIdx].pt
+	 for m in matches])
+	
+	# Compute the Essential Matrix
+	E, mask = cv.findEssentialMat(pts1, pts2,
+	 camera_matrix)	
+	_, R, t, mask = cv.recoverPose(E, pts1,
+	 pts2, camera_matrix)
+\end{verbatim}
+\endgroup
+
+The calculated changes in pose between the considered image pair, consisting of the rotation matrix \textbf{R} in a $3 \times 3$-format, as well as \texttt{change\_x}, \texttt{change\_y}, \texttt{change\_z}. Later on the \textbf{R}-matrix is converted to \textbf{euler} angle. These changes are then processed and stored in an array, which is later used for interactive graphical representation.
+
+\subsection{Framework Conditions and Discussion}
+
+The framework conditions for this study are defined by the use of specific methods for feature detection and matching, as well as the constraints imposed by the synthetic test data generated from Blender. The following points elaborate on these conditions and the rationale behind them:
+
+\paragraph{Use of Synthetic Test Data}
+The primary reason for using synthetic test data generated from Blender is the availability of absolute positions for each keyframe. This allows for a direct comparison between the estimated poses and the ground truth, providing a clear measure of the accuracy of the pose estimation algorithms. Attempts were made to find additional test data, such as the KITTI dataset. However, it was quickly discovered that the implementation could not process these images. This is likely due to the fact that the KITTI images are point clouds stored as PNG files, which are not continuous \ref{Pic1}. One potential solution to this problem would be to make the images continuous by removing all black spaces between the data points, so that all recorded data points are pixel-to-pixel. However, it is not possible to validate whether each image in the sequence has the measurement points at the same pixel (i.e., whether it is like a raster mask that consistently lies at exactly the same position on all images in the sequence). Additionally, there are no absolute positions available for these image sequences, which prevents a comparison between the estimation and the absolute position.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.46\textwidth]{pics/kitti_cropped.png}
+	\caption{Example fromm depth\_data\_velodyne\cite{kitti_dataset}}
+	\label{Pic1}
+\end{figure}
+
+\paragraph{Rendered Images}
+In addition to depth images, attempts were made to use rendered images. However, there appears to be an issue with the file type, which prevents feature detection from being performed. As a result, the program only initializes and then terminates.
+
+\paragraph{Flexion Images}
+Another test run was conducted using Flexion Images. These Flexion Images are derived from the original depth images and are merely a further processed version of them. With these images, the entire program ran successfully, meaning that both features and matches were found, and these were then used for pose reconstruction.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.46\textwidth]{pics/flexion.png}
+	\caption{Example of an Flexion Image}
+	\label{Pic2}
+\end{figure}
+
+\paragraph{Hardware and Software Constraints}
+The evaluation of the benchmarks was performed on a 12-core (i7-8750H) laptop with 64GB RAM and the integrated GPU (iGPU). The calculation of the pose, features, and matchings was done solely on the CPU. No GPU acceleration was used. It is assumed that an implementation utilizing the GPU would achieve significantly higher performance.
+
+\paragraph{Limitations of OpenCV Implementation}
+The non-proprietary implementation of OpenCV was used, which limits the selection of feature detection algorithms. The methods used for feature detection and matching were SIFT, ORB, and AKAZE, as these are well-supported by OpenCV and provide a good balance between accuracy and computational efficiency.
+
+\paragraph{Evaluation Metrics}
+The evaluation metrics for the benchmarks include the time taken for pose reconstruction, the cumulative deviation from the original path in the X, Y, and Z directions, and the minimum, maximum, and average errors in the three directions. These metrics provide a comprehensive assessment of the performance of the pose estimation algorithms.
+
+\section{Benchmark Description}
+The benchmark involves evaluating the performance of the SIFT, ORB, and AKAZE algorithms in terms of pose estimation accuracy and computational efficiency. The depth images as well as the flexion images used in this study were generated from a Blender map using the "blainder" plugin and a self-implemented tool for converting depth images into flexion images. The evaluation metrics include the time taken for pose reconstruction/estimation per image and for the complete data set, the cumulative deviation from the original path in the X, Y, and Z directions, and the minimum, maximum, and average errors in the three directions.
+
+The tests were conducted with a fully charged battery and the computer connected to the power supply. The power mode was set to "Performance" to ensure maximum possible performance. This is important because some laptops tend to throttle CPU performance when running on battery power. Additionally, all other applications were closed during the tests to allow the feature detection and matching program with pose estimation to utilize all available resources.
+
+The tests were performed using both the dataset of depth images and the dataset of flexion images. The FLANN algorithm was used for matching the descriptors in each test. For each test run, both the descriptor and detector algorithms were identical (i.e., SIFT, ORB, and AKAZE). After each test, a pause of approximately 5 minutes was taken to allow the device to cool down, preventing potential thermal throttling at the start of a new test. A total of six tests were conducted: three for depth images with SIFT, AKAZE, and ORB, and three for flexion images with SIFT, AKAZE, and ORB.
+
+For all six tests, the output/writing of the descriptors and keypoints as text files and the generation of matchings as side-by-side images with corresponding markings using colored lines between the keypoints of the two images were disabled.
+
+The detailed procedure for conducting the tests is as follows:
+\begin{enumerate}
+	\item \textbf{Preparation:} Ensure the laptop is fully charged and connected to the power supply. Set the power mode to "Performance" and close all other applications.
+	\item \textbf{Dataset Selection:} Select the dataset to be used (either depth images or flexion images).
+	\item \textbf{Algorithm Selection:} Choose the feature detection and matching algorithm (SIFT, ORB, or AKAZE).
+	\item \textbf{FLANN Matching:} Use the FLANN algorithm to match the descriptors. Note that FLANN is used for matching descriptors, not keypoints.
+	\item \textbf{Pose Estimation:} Run the pose estimation algorithm using the selected dataset and feature detection method. Record the time taken for pose reconstruction/estimation per image and for the complete dataset.
+	\item \textbf{Cooling Period:} After each test, allow the laptop to cool down for approximately 5 minutes to prevent thermal throttling.
+	\item \textbf{Repeat:} Repeat the above steps for each combination of dataset and feature detection algorithm.
+\end{enumerate}
+
+The evaluation metrics for the benchmarks include:
+
+\begin{itemize}
+	\item Time taken for pose reconstruction/estimation per image and for the complete dataset.
+	\item Cumulative deviation from the original path in the X, Y, and Z directions.
+	\item Minimum, maximum, and average errors in the three directions.
+\end{itemize}
+
+
+\subsection{Benchmark Results}
+
+\paragraph{General Expectations}
+
+Under the assumption that the implementation of the pose estimation is correct, similar results in terms of the quality of pose estimation should be expected across all test runs with the corresponding algorithms and input data. Ideally, the absolute path should deviate little to none from the estimated path. Consequently, the representation of the difference between the absolute path and the reconstructed path should approximate the shape of a sphere. This would indicate that the errors/deviations at each data point are within a certain order of magnitude. Thus, the total deviation should be within a certain order of magnitude for all three directions. If a different shape emerges, it suggests that errors in a particular direction or rotational axis are larger.
+
+Under this assumption, the cumulative error in all directions should grow, but only because it consists of the absolute values of the deviations between the estimation and the absolute position. Both the minimum, maximum, and average deviations of each axis should be within a similar order of magnitude. Additionally, these deviations for each axis should be within a similar order of magnitude. Otherwise, it could indicate that the reconstruction/pose estimation is not as reliable/stable in certain directions as in others.
+
+The actual results, unfortunately, do not meet the expectations.
+\subsection{Results}
+\paragraph{SIFT}
+The SIFT algorithm showed the following results:
+
+\begin{itemize}
+	\item Fastest processing time: Depth images
+	\item Slowest processing time: Flexion images
+	\item Lowest cumulative error: Depth images
+	\item Highest cumulative error: Flexion images
+\end{itemize}
+
+The SIFT algorithm performed better with depth images compared to flexion images. The processing times were faster, and the cumulative errors were lower for depth images. This suggests that SIFT is in this case more efficient and accurate when working with depth images.
+
+\paragraph{AKAZE}
+The AKAZE algorithm showed the following results:
+
+\begin{itemize}
+	\item Fastest processing time: Depth images
+	\item Slowest processing time: Flexion images
+	\item Lowest cumulative error: Depth images
+	\item Highest cumulative error: Flexion images
+\end{itemize}
+
+Similar to SIFT, the AKAZE algorithm performed better with depth images. The processing times were faster, and the cumulative errors were lower for depth images. This indicates that AKAZE is in this case more efficient and accurate with depth images.
+
+\paragraph{ORB}
+The ORB algorithm showed the following results:
+
+\begin{itemize}
+	\item Fastest processing time: Depth images
+	\item Slowest processing time: Flexion images
+	\item Lowest cumulative error: Depth images
+	\item Highest cumulative error: Flexion images
+\end{itemize}
+
+The ORB algorithm also performed better with depth images. The processing times were the fastest among the three algorithms, and the cumulative errors were lower for depth images. This suggests that ORB is highly efficient and more accurate with depth images.
+
+\subsubsection{Overall Comparison}
+When comparing all three algorithms and both datasets, the following observations can be made:
+
+\begin{itemize}
+	\item Fastest Algorithm: ORB with depth images
+	\item Slowest Algorithm: SIFT with flexion images
+	\item Lowest Cumulative Error: SIFT with depth images
+	\item Highest Cumulative Error: AKAZE with flexion images
+	\item Highest Maximum Error: AKAZE with flexion images
+\end{itemize}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.6\textwidth]{pics/newplot.png}
+	\caption{Interactive Plot of Pose Estimation with SIFT and Flexion Images, red: ground truth, blue: pose estimation, green: difference}
+	\label{Pic3}
+\end{figure}
+There is a significant difference between the use of flexion images and depth images. All three algorithms performed better with depth images in terms of processing time and cumulative error. The flexion images resulted in higher cumulative errors and longer processing times, indicating that depth images are more suitable for pose estimation tasks, at least with this implementation of the feature detection, matching and pose estimation.
+
+\begin{table}[]
+	\label{tab1}
+	\begin{center}
+		\begin{tabular}{llll}
+			Image processing time (FPS) & SIFT & AKAZE & ORB   \\
+			depth images:               &      &       &       \\
+			min                         & 2.13 & 2.67  & 2.63  \\
+			max                         & 5.57 & 7.10  & 12.76 \\
+			avg                         & 3.87 & 4.62  & 7.68  \\
+			flexion images:             &      &       &       \\
+			min                         & 1.80 & 2.31  & 2.49  \\
+			max                         & 4.08 & 4.90  & 8.30  \\
+			avg                         & 2.51 & 3.29  & 5.05 
+		\end{tabular}
+		\caption{Table of processing times per algorithm and data set.}
+	\end{center}
+\end{table}
+The exact results in terms of processing time can be found in the table \ref{tab1}. 
+
+Upon examining the magnitude of the errors, it is evident that the cumulative errors in all scenarios are substantial. The interactive graphics of the test runs suggest that these errors might be due to incorrect orientation alignment. During the implementation, all possible combinations of rotations and reference axes were tested, including a general offset of the rotation. In none of the tested configurations could the pose estimation be aligned with the absolute path. This indicates an implementation error. Regardless, if the quality of the pose reconstruction were adequate, there should at least be a visual similarity. This is not the case. In some test runs, "knots" appear, indicating that the algorithm detected abrupt changes in direction at these points. However, when examining the matchings, no significant errors are apparent. Although matchings are occasionally incorrect, the majority of matchings in each image pair are correct within a range that would result in small deviations in pose estimation, but not to the extent observed. Notably, in all test scenarios, the flexion images appear more stable and contain fewer of these "knots" when viewed in the interactive plots.
+
+In summary, the comparison has limited significance. The performance is insufficient for real-time applications. It is likely due to the Python implementation and the lack of graphics acceleration. The interactive plots also indicate that flexion images result in more stable pose estimations than pure depth images. To obtain more meaningful results, the pose reconstruction function needs to be revised. It is likely that there was some form of misalignment of the axes and rotations. 
+
+It should also be noted that using flexion images requires preprocessing the respective depth image, which consumes computation time. With the implementation used here, real-time capability is far from being achieved\cite{fleischer}.
+
+All results, test data, and the tool can be found in the repository \cite{repo1}.
+
+
+\section{Conclusion}
+
+In this study, various test runs were conducted using different datasets. Unfortunately, the results did not meet expectations, which appears to be solely due to the implementation of the pose estimation. It can be assumed that the cause is the swapping of data for the respective axes and rotations. This issue could not be resolved by the time the work was completed. Consequently, the results of the feature-based pose estimation do not show any resemblance to the ground truth. However, this seems to be merely a methodological problem of the implementation.
+
+Regardless, it is evident that there are differences between the types of datasets used. The flexion images show a significantly more stable path compared to the normal depth images. Therefore, it can be assumed that these are advantageous for more accurate pose estimation, but only under the condition that a real-time capable implementation for the calculation of these flexion images is used, as in \cite{toth}. In all cases, real-time capability cannot be achieved, as all tested algorithms with the specific implementation only reached frame rates in the low double-digit range.
+
+Future work could focus on revising the existing framework to ensure that pose estimation or orientation works reliably. For practical applications, it would also be essential to improve the performance of the implementation. This could be achieved by using graphics acceleration or by using hardware-near programming languages such as C++. If the approach of flexion images is further pursued, it would also be necessary to integrate this calculation into the process chain.
+
+
+
+% An example of a floating figure using the graphicx package.
+% Note that \label must occur AFTER (or within) \caption.
+% For figures, \caption should occur after the \includegraphics.
+% Note that IEEEtran v1.7 and later has special internal code that
+% is designed to preserve the operation of \label within \caption
+% even when the captionsoff option is in effect. However, because
+% of issues like this, it may be the safest practice to put all your
+% \label just after \caption rather than within \caption{}.
+%
+% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
+% option should be used if it is desired that the figures are to be
+% displayed while in draft mode.
+%
+%\begin{figure}[!t]
+%\centering
+%\includegraphics[width=2.5in]{myfigure}
+% where an .eps filename suffix will be assumed under latex, 
+% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+% via \DeclareGraphicsExtensions.
+%\caption{Simulation results for the network.}
+%\label{fig_sim}
+%\end{figure}
+
+% Note that the IEEE typically puts floats only at the top, even when this
+% results in a large percentage of a column being occupied by floats.
+
+
+% An example of a double column floating figure using two subfigures.
+% (The subfig.sty package must be loaded for this to work.)
+% The subfigure \label commands are set within each subfloat command,
+% and the \label for the overall figure must come after \caption.
+% \hfil is used as a separator to get equal spacing.
+% Watch out that the combined width of all the subfigures on a 
+% line do not exceed the text width or a line break will occur.
+%
+%\begin{figure*}[!t]
+%\centering
+%\subfloat[Case I]{\includegraphics[width=2.5in]{box}%
+%\label{fig_first_case}}
+%\hfil
+%\subfloat[Case II]{\includegraphics[width=2.5in]{box}%
+%\label{fig_second_case}}
+%\caption{Simulation results for the network.}
+%\label{fig_sim}
+%\end{figure*}
+%
+% Note that often IEEE papers with subfigures do not employ subfigure
+% captions (using the optional argument to \subfloat[]), but instead will
+% reference/describe all of them (a), (b), etc., within the main caption.
+% Be aware that for subfig.sty to generate the (a), (b), etc., subfigure
+% labels, the optional argument to \subfloat must be present. If a
+% subcaption is not desired, just leave its contents blank,
+% e.g., \subfloat[].
+
+
+% An example of a floating table. Note that, for IEEE style tables, the
+% \caption command should come BEFORE the table and, given that table
+% captions serve much like titles, are usually capitalized except for words
+% such as a, an, and, as, at, but, by, for, in, nor, of, on, or, the, to
+% and up, which are usually not capitalized unless they are the first or
+% last word of the caption. Table text will default to \footnotesize as
+% the IEEE normally uses this smaller font for tables.
+% The \label must come after \caption as always.
+%
+%\begin{table}[!t]
+%% increase table row spacing, adjust to taste
+%\renewcommand{\arraystretch}{1.3}
+% if using array.sty, it might be a good idea to tweak the value of
+% \extrarowheight as needed to properly center the text within the cells
+%\caption{An Example of a Table}
+%\label{table_example}
+%\centering
+%% Some packages, such as MDW tools, offer better commands for making tables
+%% than the plain LaTeX2e tabular which is used here.
+%\begin{tabular}{|c||c|}
+%\hline
+%One & Two\\
+%\hline
+%Three & Four\\
+%\hline
+%\end{tabular}
+%\end{table}
+
+
+% Note that the IEEE does not put floats in the very first column
+% - or typically anywhere on the first page for that matter. Also,
+% in-text middle ("here") positioning is typically not used, but it
+% is allowed and encouraged for Computer Society conferences (but
+% not Computer Society journals). Most IEEE journals/conferences use
+% top floats exclusively. 
+% Note that, LaTeX2e, unlike IEEE journals/conferences, places
+% footnotes above bottom floats. This can be corrected via the
+% \fnbelowfloat command of the stfloats package.
+
+
+
+% conference papers do not normally have an appendix
+
+
+% use section* for acknowledgment
+%\section*{Acknowledgment}
+
+
+%The authors would like to thank...
+
+
+
+
+
+% trigger a \newpage just before the given reference
+% number - used to balance the columns on the last page
+% adjust value as needed - may need to be readjusted if
+% the document is modified later
+%\IEEEtriggeratref{8}
+% The "triggered" command can be changed if desired:
+%\IEEEtriggercmd{\enlargethispage{-5in}}
+
+% references section
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://mirror.ctan.org/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+\bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s)
+\bibliography{cite.bib}
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+% (used to reserve space for the reference number labels box)
+%\begin{thebibliography}{1}
+%
+%\bibitem{IEEEhowto:kopka}
+%H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
+%  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
+%
+%\end{thebibliography}
+
+
+
+
+% that's all folks
+\end{document}
+
+

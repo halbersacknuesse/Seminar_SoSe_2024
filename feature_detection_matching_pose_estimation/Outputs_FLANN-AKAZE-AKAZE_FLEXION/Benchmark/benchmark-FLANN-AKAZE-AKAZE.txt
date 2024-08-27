@@ -1,0 +1,23 @@
+Fastest image processing time:	0.20422411 seconds
+Slowest image processing time:	0.43278933 seconds
+Average image processing time:	0.30415174 seconds
+Total processing time:		553.01170754 seconds
+Total images processed:		1800
+
+
+Cumulative error:
+	x: 268641.46725657
+	y: 289007.98009669
+	z: 49581.37623826
+Maximum error:
+	x: 379.01082444
+	y: 240.38931358
+	z: 72.92587717
+Minimum error:
+	x: 0.07826546
+	y: 0.10514822
+	z: 0.01887977
+Average error:
+	x: 149.24525959
+	y: 160.55998894
+	z: 27.54520902
