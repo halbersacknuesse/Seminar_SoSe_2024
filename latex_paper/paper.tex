@@ -1,6 +1,8 @@
 \documentclass[conference, a4paper]{IEEEtran}
 
 \usepackage{cite}
+\usepackage{hyperref}
+\usepackage{balance}
 
 \ifCLASSINFOpdf
   \usepackage[pdftex]{graphicx}
@@ -22,10 +24,10 @@
 
 \input{coverpage}
 
-\title{Comparison of feature-based pose estimation and localization methods in dark environments}
+\title{Comparison of Feature-Based Pose Estimation and Localization Methods in Dark Environments}
 
 \author{\IEEEauthorblockN{Jonas Fleischer}
-\IEEEauthorblockA{Technische Universität Bergakademie Freiberg\\Fakultät für Mathematik und Informatik\\Institut für Informatik\\Bernhard-von-Cotta-Straße 2\\09599 Freiberg}}
+\IEEEauthorblockA{Technische Universität Bergakademie Freiberg\\Faculty of Mathematics and Computer Science\\Institute of Computer Science\\Virtual Reality and Multimedia Group\\Bernhard-von-Cotta-Straße 2\\09599 Freiberg}}
 
 \maketitle
 
@@ -55,28 +57,28 @@ In this study, we will compare various feature-based methods for pose estimation
 \paragraph{SIFT (Scale-Invariant Feature Transform)}
 The Scale-Invariant Feature Transform (SIFT) is an algorithm for detecting and describing local features in images. Developed by David Lowe in 1999, SIFT is known for its robustness to changes in scale, rotation, illumination, and noise \cite{sift}. The algorithm consists of four main steps:
 \begin{enumerate}
-	\item \textbf{Scale-space extrema detection:} The image is transformed into different scales to detect features of various sizes.
-	\item \textbf{Keypoint localization:} Local maxima and minima in the scale-space are identified as potential features.
-	\item \textbf{Orientation assignment:} An orientation is assigned to each keypoint to achieve rotation invariance.
-	\item \textbf{Keypoint descriptor:} A descriptor is created for each keypoint, capturing the local image information around the keypoint.
+	\item \textbf{Scale-Space Extrema Detection:} The image is transformed into different scales to detect features of various sizes.
+	\item \textbf{Keypoint Localization:} Local maxima and minima in the scale-space are identified as potential features.
+	\item \textbf{Orientation Assignment:} An orientation is assigned to each keypoint to achieve rotation invariance.
+	\item \textbf{Keypoint Descriptor:} A descriptor is created for each keypoint, capturing the local image information around the keypoint.
 \end{enumerate}
 
 \paragraph{AKAZE (Accelerated-KAZE)}
 AKAZE is an algorithm for detecting and describing features, based on the KAZE method but significantly faster \cite{opencv_akaze}. AKAZE uses nonlinear diffusion to create the scale-space representation and is known for its efficiency and accuracy. The algorithm consists of the following steps:
 \begin{enumerate}
-	\item \textbf{Nonlinear diffusion:} The image is filtered through nonlinear diffusion to detect features of various sizes.
-	\item \textbf{Feature detection:} Local maxima and minima in the diffused image are identified as potential features.
-	\item \textbf{Feature description:} A descriptor is created for each feature, capturing the local image information around the feature.
-	\item \textbf{Feature matching:} The descriptors are used to match features between different images.
+	\item \textbf{Nonlinear Diffusion:} The image is filtered through nonlinear diffusion to detect features of various sizes.
+	\item \textbf{Feature Detection:} Local maxima and minima in the diffused image are identified as potential features.
+	\item \textbf{Feature Description:} A descriptor is created for each feature, capturing the local image information around the feature.
+	\item \textbf{Feature Matching:} The descriptors are used to match features between different images.
 \end{enumerate}
 
 \paragraph{ORB (Oriented FAST and Rotated BRIEF)}
 ORB is a fast and robust algorithm for detecting and describing features, based on the FAST and BRIEF methods \cite{orb}. ORB combines the speed of FAST with the robustness of BRIEF and adds an orientation component to make the features rotation-invariant. The algorithm consists of the following steps:
 \begin{enumerate}
-	\item \textbf{Feature detection:} The FAST algorithm is used to detect features in the image.
-	\item \textbf{Feature description:} The BRIEF descriptor is used to describe the local image information around the features.
-	\item \textbf{Orientation correction:} The features are oriented to achieve rotation invariance.
-	\item \textbf{Feature matching:} The descriptors are used to match features between different images.
+	\item \textbf{Feature Detection:} The FAST algorithm is used to detect features in the image.
+	\item \textbf{Feature Description:} The BRIEF descriptor is used to describe the local image information around the features.
+	\item \textbf{Orientation Correction:} The features are oriented to achieve rotation invariance.
+	\item \textbf{Feature Matching:} The descriptors are used to match features between different images.
 \end{enumerate}
 
 \paragraph{Descriptors and Detectors}
@@ -225,7 +227,7 @@ The primary reason for using synthetic test data generated from Blender is the a
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.46\textwidth]{pics/kitti_cropped.png}
-	\caption{Example fromm depth\_data\_velodyne\cite{kitti_dataset}}
+	\caption{Example from depth\_data\_velodyne\cite{kitti_dataset}}
 	\label{Pic1}
 \end{figure}
 
@@ -294,10 +296,10 @@ The actual results, unfortunately, do not meet the expectations.
 The SIFT algorithm showed the following results:
 
 \begin{itemize}
-	\item Fastest processing time: Depth images
-	\item Slowest processing time: Flexion images
-	\item Lowest cumulative error: Depth images
-	\item Highest cumulative error: Flexion images
+	\item Fastest Processing Time: Depth Images
+	\item Slowest Processing Time: Flexion Images
+	\item Lowest Cumulative Error: Depth Images
+	\item Highest Cumulative Error: Flexion Images
 \end{itemize}
 
 The SIFT algorithm performed better with depth images compared to flexion images. The processing times were faster, and the cumulative errors were lower for depth images. This suggests that SIFT is in this case more efficient and accurate when working with depth images.
@@ -306,10 +308,10 @@ The SIFT algorithm performed better with depth images compared to flexion images
 The AKAZE algorithm showed the following results:
 
 \begin{itemize}
-	\item Fastest processing time: Depth images
-	\item Slowest processing time: Flexion images
-	\item Lowest cumulative error: Depth images
-	\item Highest cumulative error: Flexion images
+	\item Fastest Processing Time: Depth Images
+	\item Slowest Processing Time: Flexion Images
+	\item Lowest Cumulative Error: Depth Images
+	\item Highest Cumulative Error: Flexion Images
 \end{itemize}
 
 Similar to SIFT, the AKAZE algorithm performed better with depth images. The processing times were faster, and the cumulative errors were lower for depth images. This indicates that AKAZE is in this case more efficient and accurate with depth images.
@@ -318,10 +320,10 @@ Similar to SIFT, the AKAZE algorithm performed better with depth images. The pro
 The ORB algorithm showed the following results:
 
 \begin{itemize}
-	\item Fastest processing time: Depth images
-	\item Slowest processing time: Flexion images
-	\item Lowest cumulative error: Depth images
-	\item Highest cumulative error: Flexion images
+	\item Fastest Processing Time: Depth Images
+	\item Slowest Processing Time: Flexion Images
+	\item Lowest Cumulative Error: Depth Images
+	\item Highest Cumulative Error: Flexion Images
 \end{itemize}
 
 The ORB algorithm also performed better with depth images. The processing times were the fastest among the three algorithms, and the cumulative errors were lower for depth images. This suggests that ORB is highly efficient and more accurate with depth images.
@@ -340,7 +342,7 @@ When comparing all three algorithms and both datasets, the following observation
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.6\textwidth]{pics/newplot.png}
-	\caption{Interactive Plot of Pose Estimation with SIFT and Flexion Images, red: ground truth, blue: pose estimation, green: difference}
+	\caption{Interactive Plot of Pose Estimation with SIFT and Flexion Images, red: Ground Truth, blue: Pose Estimation, green: Difference}
 	\label{Pic3}
 \end{figure}
 There is a significant difference between the use of flexion images and depth images. All three algorithms performed better with depth images in terms of processing time and cumulative error. The flexion images resulted in higher cumulative errors and longer processing times, indicating that depth images are more suitable for pose estimation tasks, at least with this implementation of the feature detection, matching and pose estimation.
@@ -359,7 +361,7 @@ There is a significant difference between the use of flexion images and depth im
 			max                         & 4.08 & 4.90  & 8.30  \\
 			avg                         & 2.51 & 3.29  & 5.05 
 		\end{tabular}
-		\caption{Table of processing times per algorithm and data set.}
+		\caption{Table of Processing Times per Algorithm and Data Set}
 	\end{center}
 \end{table}
 The exact results in terms of processing time can be found in the table \ref{tab1}. 
@@ -381,7 +383,7 @@ Regardless, it is evident that there are differences between the types of datase
 
 Future work could focus on revising the existing framework to ensure that pose estimation or orientation works reliably. For practical applications, it would also be essential to improve the performance of the implementation. This could be achieved by using graphics acceleration or by using hardware-near programming languages such as C++. If the approach of flexion images is further pursued, it would also be necessary to integrate this calculation into the process chain.
 
-
+\balance
 \bibliographystyle{IEEEtran}
 \bibliography{cite.bib}
 
