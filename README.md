@@ -68,4 +68,4 @@ This folder contains all the source files for LATEX and the rendered 'paper.pdf'
 
 ### Presentation
 
-This folder contains a handout ('handout.pdf') and the 'presentation.md'. The 'presentation.md'-file is written in markdown with specific syntax for use with LiaScript. The Link to the renderer can be found on the first page of the file.
+This folder contains a handout ('handout.pdf') and the 'presentation.md'. The 'presentation.md'-file is written in markdown with specific syntax for use with LiaScript. The Link to the renderer can be found on the first page of the file ('course on LiaScript').
