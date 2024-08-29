@@ -17,7 +17,7 @@ This tool uses a depth or flexion image sequence to estimate the poses of image 
   - examples given in the folder
 - place camera intrinsic matrix in 'Dataset/Intrinsic'
   - example given in the folder
-  - further information can be found in [this repo](https://github.com/TUBAF-IFI-VR/Projektseminar22-23)
+  - further information can be found in [this repo](https://github.com/TUBAF-IFI-VR/Projektseminar22-23/blob/main/depth2flexion_py/README.md#intrinsik)
 - Example data set is provided in 'Dataset/blender_test_data/blender_testmap'
 
 #### Execution
